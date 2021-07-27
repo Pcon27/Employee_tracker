@@ -19,7 +19,10 @@
   "homepage": "https://github.com/Pcon27/Employee_tracker#readme",
   "dependencies": {
     "console.table": "^0.10.0",
+    "dotenv": "^10.0.0",
     "inquirer": "^8.1.2",
+    "install": "^0.13.0",
+    "mysql": "^2.18.1",
     "mysql2": "^2.2.5"
   }
 }
