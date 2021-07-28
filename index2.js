@@ -39,7 +39,9 @@ function showAllEmp(){
        JOIN role
        ON employee.role_id = role.id 
        JOIN department
-       ON role.department_id = department.id`, 
+       ON role.department_id = department.id
+       JOIN employee
+       ON employee.manager_id = employee.id`, 
        
        (err, data) => {
         console.table(data)
@@ -82,6 +84,7 @@ function addEmp(){
     })
 });
 };
+
 
 
 
@@ -137,6 +140,11 @@ function showAllRol(){
 //ADD
 
 
+
+
+
+
+
 function addRol(){
 
     connection.promise().query(`SELECT * FROM department`)
@@ -157,6 +165,13 @@ function addRol(){
     })
 })
 }
+
+
+
+
+
+
+
 
 
 // SHOW
