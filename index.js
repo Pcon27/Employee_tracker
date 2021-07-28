@@ -75,7 +75,7 @@ function addEmp(){
     console.log(answer)
     connection.query(`INSERT INTO employee (first_name, last_name, role_id, manager_id)
     VALUES ("${answer.newEmployeeFirstName}", "${answer.newEmployeeLastName}", ${answer.newEmployeRole}, ${answer.newEmployeeManager});`, (err, data) => {
-        console.table(data)
+        console.log("New Employee Added!")
         promptQuestions()
     })
 });
@@ -128,7 +128,7 @@ function showAllRol(){
         FROM role
         LEFT JOIN department
         on role.department_id = department.id`, (err, data) => {
-        console.table(data)
+        console.table("Employee Updated!")
         promptQuestions()
     })
 }
@@ -156,7 +156,7 @@ function addRol(){
     .then (answer => {
     connection.query(`INSERT INTO role (title, salary, department_id)
     VALUES ("${answer.roleName}", ${answer.roleSalary}, ${answer.roleDepartment})`, (err, data) => {
-    console.table(data)
+    console.table("Role Updated!")
     promptQuestions()
     })
 })
@@ -189,7 +189,7 @@ function addDep(answer){
     choices.push(answer.departmentName)
     connection.query(`INSERT INTO department (name)
     VALUES ("${answer.departmentName}")`)
-    console.log("worked")
+    console.log("Department Updated!")
     promptQuestions()
     })
 }
