@@ -7,6 +7,46 @@ const initialQuestions = [
     }
 ]
 
+const employeeQuestions = [
+    {
+        type: "Input", 
+        message: "What is the New Employee's First Name",
+        name: "newEmployeeFirstName"
+    },
+    {
+        type: "Input", 
+        message: "What is the New Employee's Last Name",
+        name: "newEmployeeLastName"
+    },
+    {
+        type: "list", 
+        message: "What is the New Employee's Role",
+        name: "newEmployeRole",
+        choices: []
+    },
+    {
+        type: "list", 
+        message: "What is the New Employee's Manager",
+        name: "newEmployeeManager",
+        choices: [{name: "none", value: null}]
+    },
+]
+
+const updateEmployeeQuestions = [
+    {
+        type: "list",
+        message: "Which employee's role do you wish to update?",
+        name: "updatedEmployeeName",
+        choices: []
+    },
+    {
+        type: "list",
+        message: "To which role is this employee being assigned?",
+        name: "updatedEmployeeRole",
+        choices: []
+    },
+]
+
 const departmentQuestions = [
     {
         type: "Input", 
@@ -27,36 +67,13 @@ const roleQuestions = [
         name: "roleSalary"
     },
     {
-        type: "List", 
+        type: "list", 
         message: "Enter New Role's Department",
         name: "roleDepartment",
         choices: []
     }
 ]
 
-const employeeQuestions = [
-    {
-        type: "Input", 
-        message: "What is the New Employee's First Name",
-        name: "employeeFirstName"
-    },
-    {
-        type: "Input", 
-        message: "What is the New Employee's Last Name",
-        name: "employeeLastName"
-    },
-    {
-        type: "list", 
-        message: "What is the New Employee's Role",
-        name: "employeeNewRole",
-        choices: []
-    },
-    {
-        type: "list", 
-        message: "What is the New Employee's Manager",
-        name: "employeeManager",
-        choices: []
-    },
-]
 
-module.exports = {initialQuestions, departmentQuestions, roleQuestions, employeeQuestions}
+
+module.exports = {initialQuestions, departmentQuestions, roleQuestions, employeeQuestions, updateEmployeeQuestions}
